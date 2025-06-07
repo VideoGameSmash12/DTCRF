@@ -1,0 +1,789 @@
+/* dark monobook theme - intended for The Cutting Room Floor */
+
+:root {
+    --text-color: white;
+    --lesser-text-color: #aaa;
+    --accent-color: #fabd23;
+    
+    --darken-gradient: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+    
+    --wikipage-body-background: #121212;
+    --wikipage-body-border-color: #282828;
+    --wikipage-body-border: 1px solid var(--wikipage-body-border-color);
+    
+    --wikipage-object-background: #181818;
+    --wikipage-object-border-color: #343434;
+    --wikipage-object-border: 1px solid var(--wikipage-object-border-color);
+    
+    --wikipage-subobject-background: #343434;
+    --wikipage-subobject-border-color: #505050;
+}
+
+/* -- core elements -- */
+body {
+    background: #000;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: white;
+}
+a {
+    color: white;
+}
+a:visited {
+    color: var(--lesser-text-color);
+}
+input, textarea, select {
+    background: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+    color: var(--text-color);
+}
+input[type=file]::file-selector-button {
+    background: var(--wikipage-subobject-background);
+    border: none;
+    color: var(--text-color);
+}
+ul {
+    list-style-image: linear-gradient(to bottom, white, white);
+}
+hr {
+    background-color: var(--wikipage-object-border-color);
+}
+fieldset {
+    /*border-color: var(--accent-color);*/
+    border-color: var(--wikipage-body-border-color);
+}
+
+/* -- user options (at the top of the page) -- */
+#p-personal li a {
+    color: var(--lesser-text-color);
+}
+#p-personal li a:hover {
+    color: var(--text-color);
+    background-color: transparent;
+}
+#pt-uls .uls-trigger::before {
+    filter: invert();
+}
+li#pt-userpage, li#pt-anonuserpage {
+    filter: saturate(0);
+}
+li#pt-userpage:hover {
+    filter: saturate(0) brightness(1.5);
+}
+
+/* -- sidebars -- */
+.portlet .pBody {
+    background-color: var(--wikipage-body-background);
+    border: var(--wikipage-body-border);
+    
+    border-top-right-radius: 0px;
+}
+
+/* -- footer -- */
+#footer {
+    background-color: var(--wikipage-body-background);
+    color: var(--text-color);
+    
+    /* the footer looks stupid when it is hanging at the bottom just a few pixels up */
+    margin-bottom: 0px;
+    border-bottom: none;
+}
+
+/* -- page related stuff -- */
+/* page body */
+.mw-body {
+    background: var(--wikipage-body-background);
+    border: var(--wikipage-body-border);
+    color: var(--text-color);
+}
+
+/* top buttons above the page */
+#p-cactions li {
+    border: var(--wikipage-body-border);
+}
+#p-cactions li a {
+    background: var(--wikipage-body-background);
+    color: var(--lesser-text-color);
+}
+#p-cactions li.selected a {
+    background: var(--wikipage-body-background);
+    color:  var(--text-color);
+}
+#p-cactions li a:hover {
+    background: var(--wikipage-object-background);
+    color:  var(--text-color);
+}
+
+/* site notice */
+#siteNotice #localNotice .msgbox {
+    background: var(--wikipage-object-background) !important;
+    border-color: var(--wikipage-object-border-color) !important;
+    border-radius: 0px;
+    
+    color:  var(--text-color) !important;
+}
+
+/* -- page elements (bobs, templates) -- */
+
+/* "redirected from" text */
+#contentSub, #contentSub2 {
+    color: var(--lesser-text-color);
+}
+
+/* external links */
+.mw-parser-output a.external {
+    color: var(--lesser-text-color);
+    filter: saturate(0);
+}
+.mw-parser-output a.external:visited {
+    color: var(--lesser-text-color);
+}
+.mw-parser-output a.extiw, .mw-parser-output a.extiw:active {
+    color: var(--lesser-text-color);
+}
+
+/* bob */
+.breakout {
+    background: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+}
+.breakouttitle {
+    background: var(--wikipage-subobject-background);
+}
+
+/* table of contents */
+.toc, .mw-warning, .toccolours {
+    background: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+}
+.tocnumber {
+    color:  var(--lesser-text-color)
+}
+.toctogglelabel {
+    color: var(--lesser-text-color)
+}
+.toctogglelabel:hover {
+    color:  var(--text-color)
+}
+
+/* filters */
+.mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend {
+    background-color: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+}
+.mw-rcfilters-ui-filterTagMultiselectWidget-views-select-widget.oo-ui-widget {
+    border-color: var(--wikipage-object-border-color);
+}
+.mw-rcfilters-ui-filterTagMultiselectWidget-wrapper-content-title {
+    color: var(--lesser-text-color)
+}
+.mw-rcfilters-ui-filterTagMultiselectWidget-emptyFilters {
+    color: var(--lesser-text-color)
+}
+.mw-rcfilters-ui-filterTagMultiselectWidget.oo-ui-widget-enabled .oo-ui-tagMultiselectWidget-handle {
+    background-color: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+    border-radius: 0px;
+}
+.mw-rcfilters-ui-tagItemWidget-popup-content, .mw-rcfilters-ui-savedLinksListWidget-placeholder.oo-ui-optionWidget .oo-ui-labelElement-label, .mw-rcfilters-ui-tagItemWidget.oo-ui-flaggedElement-muted.oo-ui-tagItemWidget.oo-ui-widget-enabled .oo-ui-labelElement-label {
+    color: var(--text-color);
+}
+.mw-rcfilters-ui-savedLinksListWidget-placeholder.oo-ui-optionWidget .oo-ui-labelElement-label {
+    border-radius: 0px;
+}
+.mw-rcfilters-ui-filterMenuSectionOptionWidget {
+    background-color: #121212;
+}
+.mw-rcfilters-ui-filterMenuSectionOptionWidget-header-title.oo-ui-labelElement-label, .mw-rcfilters-ui-itemMenuOptionWidget-label-title, .mw-rcfilters-ui-viewSwitchWidget label.oo-ui-labelWidget {
+    color: var(--text-color)
+}
+.mw-rcfilters-ui-itemMenuOptionWidget:not(:last-child):not(.mw-rcfilters-ui-itemMenuOptionWidget-identifier-talk) {
+    border-color: var(--wikipage-object-border-color);
+}
+.mw-rcfilters-ui-itemMenuOptionWidget.oo-ui-optionWidget-selected {
+    background-color: var(--wikipage-object-background);
+}
+.mw-rcfilters-ui-itemMenuOptionWidget-label-desc, .mw-rcfilters-ui-filterMenuOptionWidget.oo-ui-flaggedElement-muted .mw-rcfilters-ui-itemMenuOptionWidget-label-title, .mw-rcfilters-ui-filterMenuOptionWidget.oo-ui-flaggedElement-muted .mw-rcfilters-ui-itemMenuOptionWidget-label-desc  {
+    color: var(--lesser-text-color);
+}
+.mw-rcfilters-ui-filterMenuOptionWidget.oo-ui-flaggedElement-muted:not(.oo-ui-optionWidget-selected) {
+    background-color: #121212;
+}
+.mw-rcfilters-ui-filterMenuHeaderWidget-header {
+    background-color: #121212;
+    border-color: var(--wikipage-object-border-color);
+}
+.mw-rcfilters-ui-menuSelectWidget-footer-feedback {
+    display: none;
+}
+.mw-rcfilters-ui-menuSelectWidget-footer {
+    background-color: #121212;
+    border-color: transparent;
+}
+.mw-rcfilters-ui-filterMenuHeaderWidget-title {
+    color: var(--lesser-text-color);
+}
+.mw-rcfilters-ui-changesListWrapperWidget-previousChangesIndicator {
+    border-top: var(--wikipage-object-border);
+}
+.mw-rcfilters-collapsed .mw-rcfilters-ui-filterTagMultiselectWidget {
+    border-color: var(--wikipage-object-border-color)
+}
+
+/* gallery box */
+#content .gallerybox div.thumb {
+    background-color: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+}
+#content .gallerybox .thumb img, #file img {
+    background: transparent;
+}
+
+/* image thumbnails */
+div.thumbinner {
+    background-color: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+}
+div.thumb img.thumbimage, html .thumbimage {
+    background-color: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+}
+
+/* file table of contents */
+#filetoc {
+    background: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+}
+
+/* search bar thing */
+.mw-search-profile-tabs {
+    background: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+}
+.search-types .current a {
+    color: var(--text-color);
+}
+
+/* search results */
+.results-info {
+    color: var(--lesser-text-color);
+}
+
+/* pre, code boxes */
+pre, code, .mw-code {
+    background-color: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+    
+    color: var(--text-color);
+}
+
+/* table */
+table.wikitable, table.prettytable {
+    background: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+    color: var(--text-color);
+}
+.wikitable > tr > th, .wikitable > * > tr > th, .wikitable th, .prettytable th {
+    background: var(--wikipage-object-border-color);
+    border: var(--wikipage-object-border);
+}
+.wikitable > tr > th, .wikitable > tr > td, .wikitable > * > tr > th, .wikitable > * > tr > td, .wikitable td, .prettytable td {
+    border: var(--wikipage-object-border);
+}
+
+/* file metadata table */
+.mw_metadata th {
+    background: var(--wikipage-object-border-color);
+    border: var(--wikipage-object-border);
+}
+.mw_metadata td {
+    background: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+}
+
+/* todo */
+/*.msgbox[style="border-color: #dddddd; background: #f8f8f8;"] {
+    background: var(--wikipage-object-background) !important;
+    border-color: var(--wikipage-object-border-color) !important;
+    
+    color: var(--text-color);
+}*/
+
+/* leak, generic */
+/*.msgbox {
+    background: var(--wikipage-object-background);
+    border-color: var(--wikipage-object-border-color);
+    
+    color: var(--text-color);
+}*/
+.msgbox {
+    background: var(--wikipage-object-background) !important;
+    border-color: var(--wikipage-object-border-color) !important;
+    
+    color: var(--text-color);
+}
+/* implemented */
+/*.msgbox[style="border-color: #4f4; background: #efe;"] {
+    background: var(--wikipage-object-background) !important;
+    border-color: var(--wikipage-object-border-color) !important;
+    
+    color: var(--text-color);
+}*/
+/* started */
+/*.msgbox[style="border-color: #faa; background: #fcc;"] {
+    background: #500 !important;
+    border-color: #600 !important;
+}*/
+
+/* "this is the talk page for user:whoever" box */
+.mw-talkpageheader .msgbox, .mw-editnotice .msgbox {
+    background: var(--wikipage-object-background) !important;
+    border-color: var(--wikipage-object-border-color) !important;
+    border-radius: 0px;
+
+    color: var(--text-color);
+}
+
+/* subpage */
+.msgbox[style="border-color: #ddd; background: #fff;"] {
+    background: var(--wikipage-object-background) !important;
+    border-color: var(--wikipage-object-border-color) !important;
+    
+    color: var(--text-color);
+}
+
+/* image info box */
+#image-info-box {
+    background: var(--wikipage-object-background) !important;
+    border-color: var(--wikipage-object-border-color) !important;
+}
+
+/* extra special inputs */
+.oo-ui-textInputWidget .oo-ui-inputWidget-input, .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle, .oo-ui-dropdownInputWidget select {
+    background-color: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+    border-radius: 0px;
+    color: var(--text-color);
+    
+    /* box shadow that makes this look stupid */
+    box-shadow: none;
+}
+.oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle:focus, .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle:hover, .oo-ui-textInputWidget.oo-ui-widget-enabled .oo-ui-inputWidget-input:focus, .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .mw-rcfilters-ui-tagItemWidget-selected.oo-ui-tagItemWidget.oo-ui-widget-enabled, .oo-ui-tagItemWidget:focus, .oo-ui-buttonElement-frameless.oo-ui-widget-enabled.oo-ui-iconElement > .oo-ui-buttonElement-button:focus, .oo-ui-buttonElement-frameless.oo-ui-widget-enabled.oo-ui-labelElement > .oo-ui-buttonElement-button:focus { 
+    border-color: var(--accent-color);
+    box-shadow: none;
+}
+.oo-ui-buttonElement-framed.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button:hover, .oo-ui-buttonElement-button:hover, .oo-ui-buttonElement-button:focus, .oo-ui-buttonElement-framed > .oo-ui-buttonElement-button:hover, .oo-ui-buttonElement-framed > .oo-ui-buttonElement-button:focus {
+    border-color: var(--accent-color);
+    box-shadow: none;
+}
+.oo-ui-indicator-down, .oo-ui-icon-check, .mw-ui-icon-check::before {
+    filter: invert();
+}
+.oo-ui-menuSelectWidget {
+    background-color: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+    border-radius: 0px;
+    
+    box-shadow: none;
+}
+.oo-ui-menuOptionWidget.oo-ui-widget-enabled.oo-ui-optionWidget {
+    color: var(--text-color)
+}
+.oo-ui-selectWidget-pressed .oo-ui-optionWidget-pressed, .oo-ui-selectWidget-pressed .oo-ui-optionWidget-pressed.oo-ui-optionWidget-highlighted, .oo-ui-selectWidget-pressed .oo-ui-optionWidget-pressed.oo-ui-optionWidget-highlighted.oo-ui-optionWidget-selected, .oo-ui-menuOptionWidget.oo-ui-optionWidget-highlighted,
+.oo-ui-menuOptionWidget.oo-ui-optionWidget-highlighted.oo-ui-optionWidget-selected {
+    background-color: var(--wikipage-subobject-background);
+}
+.oo-ui-buttonElement-frameless.oo-ui-labelElement > .oo-ui-buttonElement-button > .oo-ui-labelElement-label {
+    color: var(--text-color);
+}
+span.fileinput-button {
+    background-color: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+    border-radius: 0px;
+    color: var(--text-color);
+}
+.mw-widget-dateInputWidget.oo-ui-widget-enabled .mw-widget-dateInputWidget-handle {
+    background-color: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+    border-radius: 0px;
+    box-shadow: none;
+    color: var(--text-color);
+}
+.mw-widget-dateInputWidget.oo-ui-widget-enabled .mw-widget-dateInputWidget-handle:hover {
+    border-color: var(--accent-color);
+}
+.mw-widget-dateInputWidget-calendar {
+    background-color: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+    border-radius: 0px;
+    box-shadow: none;
+}
+.mw-widget-calendarWidget:focus {
+    border-color: var(--accent-color);
+    box-shadow: none;
+}
+.mw-widget-calendarWidget-day {
+    color: var(--text-color);
+    border-radius: 0px;
+}
+.mw-widget-calendarWidget-day-additional {
+    color: var(--lesser-text-color);
+}
+.mw-widget-calendarWidget-item:hover {
+    background-color: var(--accent-color);
+}
+.mw-widget-calendarWidget-item-selected {
+    background-color: var(--accent-color);
+}
+.mw-widget-calendarWidget-day-today {
+    border: 1px solid var(--accent-color);
+    box-shadow: none;
+}
+.oo-ui-buttonElement-framed.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button {
+    background-color: var(--wikipage-object-background);
+    background-image: none;
+    border: var(--wikipage-object-border);
+}
+.oo-ui-buttonElement-framed.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button[disabled] {
+    background-color: #121212;
+    color: var(--lesser-text-color);
+}
+.oo-ui-buttonElement-framed > .oo-ui-buttonElement-button {
+    background-color: var(--wikipage-object-background);
+    background-image: none;
+    border: var(--wikipage-object-border);
+    border-radius: 0px;
+    color: var(--text-color);
+    text-shadow: none;
+}
+.oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button:active, .oo-ui-buttonElement-framed.oo-ui-buttonElement-active > .oo-ui-buttonElement-button, .oo-ui-buttonElement-framed.oo-ui-buttonElement-pressed > .oo-ui-buttonElement-button {
+    background-color: var(--wikipage-object-background);
+    background-image: none;
+    border-color: var(--accent-color);
+    color: var(--text-color);
+}
+.oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .oo-ui-tagItemWidget.oo-ui-widget-enabled, .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .mw-rcfilters-ui-tagItemWidget-selected.oo-ui-tagItemWidget.oo-ui-widget-enabled {
+    background-color: var(--wikipage-subobject-background);
+    background-image: none;
+    border: var(--wikipage-object-border);
+    border-radius: 0px;
+    color: var(--text-color);
+}
+.oo-ui-tagItemWidget.oo-ui-labelElement .oo-ui-labelElement-label {
+    text-shadow: none;
+}
+
+/* pop-up widget */
+.oo-ui-popupWidget-popup {
+    background-color: var(--wikipage-subobject-background);
+    border: var(--wikipage-subobject-border);
+    border-radius: 0px;
+    color: var(--text-color);
+}
+.oo-ui-popupWidget-anchored-bottom .oo-ui-popupWidget-anchor::before {
+    border-top-color: var(--wikipage-object-background);
+}
+.oo-ui-popupWidget-anchored-bottom .oo-ui-popupWidget-anchor::after {
+    border-top-color: var(--wikipage-subobject-background);
+}
+
+/* "move page" box */
+.oo-ui-panelLayout-framed {
+    border: var(--wikipage-object-border);
+    border-radius: 0px;
+}
+
+/* translation boxes */
+.mw-pt-translate-header {
+    border-bottom: none;
+}
+.mw-pt-languages {
+    background-color: var(--wikipage-object-background);
+    border-color: var(--wikipage-object-border-color);
+    
+    margin-top: 1px !important;
+}
+.mw-pt-languages-label {
+    background-color: var(--wikipage-object-border-color);
+}
+
+/* "featured" boxes */
+#featured-area {
+    background: var(--wikipage-object-background) !important;
+    border-color: var(--wikipage-object-border-color) !important;
+}
+
+/* "did you know" box */
+#dyk-area {
+    background: var(--wikipage-object-background) !important;
+    border-color: var(--wikipage-object-border-color) !important;
+}
+
+/* "contributing" box */
+#contrib-area {
+    background: var(--wikipage-object-background) !important;
+    border-color: var(--wikipage-object-border-color) !important;
+}
+
+/* "statistics" box */
+#statistics-bar {
+    background: var(--wikipage-object-background) !important;
+    border: var(--wikipage-object-border) !important;
+}
+
+/* download box */
+table[style="border-radius: 10px; border: 1px solid #aaa; padding:.5em 1.5em; margin:1em 0; box-shadow: 0px 1px 10px 0px rgba(0,0,0,.25);"] {
+    background-color: var(--wikipage-object-background);
+    border-color: var(--wikipage-object-border-color) !important;
+    border-radius: 0px !important;
+}
+
+/* category links */
+.catlinks {
+    background-color: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+}
+
+/* player */
+.k-player .control-bar {
+    background: linear-gradient(to top, var(--wikipage-subobject-background), var(--wikipage-object-background));
+    border: var(--wikipage-object-border) !important;
+}
+.k-player .time-disp {
+    color: var(--lesser-text-color);
+}
+.k-player .play_head .ui-slider-handle {
+    /*background: var(--wikipage-subobject-background) !important;*/
+    background: var(--wikipage-subobject-border-color) !important;
+}
+.play_head .ui-state-highlight, .play_head .ui-widget-content .ui-state-highlight, .play_head .ui-widget-header .ui-state-highlight {
+    border: none;
+}
+.k-player .play_head {
+    background: var(--wikipage-object-background);
+    border: var(--wikipage-object-border) !important;
+}
+.k-player .control-bar .ui-icon, .k-player .control-bar .ui-icon {
+    filter: invert();
+}
+.k-player .volume-slider {
+    filter: invert();
+}
+.k-player .k-options {
+    border-color: transparent !important;
+    color: var(--lesser-text-color) !important;
+}
+
+/* editor */
+.wikiEditor-ui-toolbar {
+    background-color: var(--wikipage-object-background);
+    background-image: var(--darken-gradient);
+}
+.wikiEditor-ui .wikiEditor-ui-top {
+    border-color: var(--wikipage-object-border-color)
+}
+.wikiEditor-ui .wikiEditor-ui-view {
+    border: var(--wikipage-object-border);
+}
+.oo-ui-iconElement-icon {
+    filter: invert()
+}
+.tool.oo-ui-buttonElement-frameless.oo-ui-iconElement:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    outline: none;
+}
+.oo-ui-buttonElement-frameless > .oo-ui-buttonElement-button:hover {
+    background-color: transparent;
+}
+.wikiEditor-ui-toolbar .tabs span.tab a, .wikiEditor-ui-toolbar .tabs span.tab a:visited {
+    color: var(--text-color);
+}
+.wikiEditor-ui-toolbar .tabs span.tab a.current, .wikiEditor-ui-toolbar .tabs span.tab a.current:visited {
+    color: var(--lesser-text-color);
+}
+.wikiEditor-ui-toolbar .group .label {
+    color: var(--lesser-text-color);
+}
+.wikiEditor-ui-toolbar .sections .section {
+    background-color: #121212;
+    border-color: #121212;
+}
+.wikiEditor-ui-toolbar .group .tool-select {
+    background: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+}
+.wikiEditor-ui-toolbar .group .tool-select .label {
+    color: var(--lesser-text-color);
+}
+.wikiEditor-ui-toolbar .group .tool-select .options {
+    background: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+}
+.wikiEditor-ui-toolbar .group .tool-select .options .option:hover {
+    background: var(--wikipage-object-border-color);
+}
+.wikiEditor-ui-toolbar .group .tool-select .options .option {
+    color: var(--text-color);
+}
+.editOptions {
+    background-color: var(--wikipage-page-background);
+    border-color: var(--wikipage-object-border-color);
+    color: var(--lesser-text-color);
+}
+.wikiEditor-ui-toolbar .booklet .index .current {
+    background-color: var(--wikipage-object-background);
+    color: var(--text-color);
+}
+.wikiEditor-ui-toolbar .booklet .index div {
+    color: var(--text-color);
+}
+.wikiEditor-ui-toolbar .booklet .pages {
+    background-color: #121212;
+}
+.wikiEditor-ui-toolbar .page-characters div span {
+    border: var(--wikipage-object-border);
+    color: var(--text-color);
+}
+.wikiEditor-ui-toolbar .page-characters div span:hover {
+    background-color: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+}
+.wikiEditor-ui-toolbar .page-table th {
+    color: var(--lesser-text-color);
+}
+.wikiEditor-ui-toolbar .page-table td {
+    border-color: var(--wikipage-object-border-color);
+    color: var(--text-color);
+}
+
+/* language related stuff */
+.ext-cc-language-selector__trigger {
+    color: var(--text-color)
+}
+.ext-cc-language-selector__trigger::after {
+    border-top: 4px solid var(--text-color);
+}
+
+/* page history */
+#pagehistory li.selected {
+    background-color: transparent;
+    outline: 1px dashed var(--wikipage-object-border-color);
+    color: var(--text-color);
+}
+
+/* difference comparison */
+.diff-context {
+    background: var(--wikipage-object-background);
+    border-color: var(--wikipage-object-border-color);
+    border-radius: 0px;
+    color: var(--text-color);
+}
+.diff-addedline {
+    border-color: #006400;
+    border-radius: 0px;
+}
+.diff-addedline .diffchange {
+    background: #326432;
+    border-radius: 0px;
+}
+.diff-deletedline {
+    border-color: #960000;
+    border-radius: 0px;
+}
+.diff-deletedline .diffchange {
+    background: #963232;
+    border-radius: 0px;
+}
+
+/* preferences page */
+.mw-prefs-tabs-wrapper.oo-ui-panelLayout-framed, .mw-prefs-tabs > .oo-ui-menuLayout-content > .oo-ui-indexLayout-stackLayout > .oo-ui-tabPanelLayout {
+    /*border-color: transparent;*/
+    border-color: var(--wikipage-object-border-color);
+}
+.oo-ui-menuLayout-menu {
+    border-bottom: var(--wikipage-object-border);
+}
+.oo-ui-tabSelectWidget-framed {
+    background-color: var(--wikipage-object-background);
+    color: var(--lesser-text-color);
+}
+.oo-ui-tabOptionWidget {
+    color: var(--lesser-text-color);
+}
+.oo-ui-tabSelectWidget-framed .oo-ui-tabOptionWidget.oo-ui-optionWidget-selected {
+    background-color: var(--wikipage-object-border-color);
+    border: var(--wikipage-object-border);
+    border-bottom: none;
+    border-radius: 0px;
+    color: var(--text-color);
+}
+.oo-ui-tabSelectWidget-framed .oo-ui-tabOptionWidget.oo-ui-widget-enabled.oo-ui-optionWidget-selected:hover {
+    background-color: var(--wikipage-object-border-color);
+    color: var(--text-color);
+}
+.oo-ui-tabSelectWidget-framed .oo-ui-tabOptionWidget.oo-ui-widget-enabled:hover {
+    background-color: var(--wikipage-object-border-color);
+    border: var(--wikipage-object-border);
+    border-bottom: none;
+    border-radius: 0px;
+    color: var(--text-color);
+}
+.mw-prefs-buttons {
+    background-color: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+    padding-left: 1em;
+}
+
+/* game series */
+table.navbox {
+    border-color: var(--wikipage-object-border-color);
+}
+.navboxhead {
+    background: var(--wikipage-object-background) !important;
+    color: var(--text-color) !important;
+}
+.navbox th {
+    background: var(--wikipage-object-background);
+    color: var(--text-color) !important;
+}
+
+/* notifications */
+.mw-notification {
+    background: var(--wikipage-object-background);
+    border: var(--wikipage-object-border);
+    border-radius: 0px;
+}
+
+/* warning */
+div.mw-warning-with-logexcerpt {
+    border-color: var(--accent-color);
+}
+
+/* extra darkening */
+.autocomment, .autocomment a, .autocomment a:visited, li span.deleted, span.history-deleted {
+    color: var(--lesser-text-color);
+}
+
+/* hack that disables table functions if it's a message box in a table */
+td .msgbox tbody tr td {
+    border: none;
+}
+/* centers the logo a bit more */
+.mw-wiki-logo {
+    margin-left: 8px;
+}
+
+/* weird icons */
+#mw-indicator-mw-helplink a {
+    color: black;
+    filter: invert();
+}
+.oo-ui-indicator-clear {
+    filter: invert();
+}
+
+/* indicators */
+.mw-indicators {
+    filter: saturate(0);
+    margin-top: -5px
+}

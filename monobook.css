@@ -320,7 +320,7 @@ table.wikitable, table.prettytable {
     background: var(--wikipage-object-background) !important;
     border-color: var(--wikipage-object-border-color) !important;
     
-    color: var(--text-color);
+    color: var(--text-color) !important;
 }
 /* implemented */
 /*.msgbox[style="border-color: #4f4; background: #efe;"] {
@@ -758,6 +758,11 @@ table.navbox {
 div.mw-warning-with-logexcerpt {
     border-color: var(--accent-color);
 }
+.warningbox {
+    background-color: var(--wikipage-body-background);
+    border-color: var(--accent-color);
+    color: var(--text-color);
+}
 
 /* extra darkening */
 .autocomment, .autocomment a, .autocomment a:visited, li span.deleted, span.history-deleted {
@@ -786,4 +791,49 @@ td .msgbox tbody tr td {
 .mw-indicators {
     filter: saturate(0);
     margin-top: -5px
+}
+
+/* "there is no text in this page" box */
+div.noarticletext {
+    background-color: var(--wikipage-object-background);
+    border-color: var(--wikipage-object-border-color);
+    color: var(--text-color);
+}
+
+/* data tables (used for places like the block log) */
+.mw-datatable {
+    border-color: var(--wikipage-object-border-color);
+}
+.mw-datatable th {
+    background-color: var(--wikipage-object-border-color);
+    border-color: var(--wikipage-object-border-color);
+}
+.mw-datatable td {
+    background-color: var(--wikipage-object-background);
+    border-color: var(--wikipage-object-border-color);
+}
+.mw-datatable tr:hover td {
+    background-color: var(--wikipage-object-background);
+}
+
+/* in-page search results */
+.suggestions-special {
+    background-color: var(--wikipage-object-background);
+    border-color: var(--wikipage-object-border-color);
+}
+.suggestions-special .special-label {
+    color: var(--lesser-text-color);
+}
+.suggestions a.mw-searchSuggest-link, .suggestions a.mw-searchSuggest-link:hover, .suggestions a.mw-searchSuggest-link:active, .suggestions a.mw-searchSuggest-link:focus, .suggestions-special .special-query {
+    color: var(--text-color);
+}
+.suggestions-results {
+    background-color: var(--wikipage-object-background);
+    border-color: var(--wikipage-object-border-color);
+}
+.suggestions-result {
+    color: var(--text-color);
+}
+.suggestions-result-current {
+    background-color: var(--wikipage-object-border-color);
 }
